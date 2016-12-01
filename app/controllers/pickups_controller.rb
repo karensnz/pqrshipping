@@ -1,6 +1,7 @@
 class PickupsController < ApplicationController
   def index
-    @pickups = Pickup.page(params[:page]).per(10)
+    @q = Pickup.ransack(params[:q])
+    @pickups = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("pickups/index.html.erb")
   end
