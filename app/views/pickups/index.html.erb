@@ -22,7 +22,7 @@
 
       <% @pickups.each do |pickup| %>
       <tr>
-        <td><%= pickup.user_id %></td>
+        <td><%= pickup.user.created_at %></td>
         <td><%= pickup.day %></td>
         <td><%= pickup.time %></td>
         <td><%= pickup.package_type %></td>
