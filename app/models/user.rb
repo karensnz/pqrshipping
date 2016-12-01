@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :deliveries,
+             :class_name => "Pickup",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
