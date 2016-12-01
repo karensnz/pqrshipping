@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :email, :presence => { :message => "You must enter an e-mail address!" }
+
   validates :password, :uniqueness => { :case_sensitive => true }
 
   validates :password, :presence => true
