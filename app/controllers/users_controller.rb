@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @pickup = Pickup.new
     @user = User.find(params[:id])
 
     render("users/show.html.erb")
