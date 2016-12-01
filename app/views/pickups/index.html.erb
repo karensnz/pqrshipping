@@ -22,7 +22,13 @@
 
       <% @pickups.each do |pickup| %>
       <tr>
-        <td><%= pickup.user.created_at %></td>
+        <td>
+          <% if pickup.user.present? %>
+            <a href="/users/<%= pickup.user.id %>">
+              <%= pickup.user.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= pickup.day %></td>
         <td><%= pickup.time %></td>
         <td><%= pickup.package_type %></td>
