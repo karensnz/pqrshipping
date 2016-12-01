@@ -1,6 +1,6 @@
 class PickupsController < ApplicationController
   def index
-    @pickups = Pickup.all
+    @pickups = Pickup.page(params[:page]).per(10)
 
     render("pickups/index.html.erb")
   end
